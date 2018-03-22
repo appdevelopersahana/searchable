@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SearchableRecyclerView</string>
+    <string name="searchable">Input appliance type</string>
+    <string name="search_button">Search</string>
+    <string name="appliance_name">Tv/Ac</string>
+    <string name="seller_name">Seller name</string>
+    <string name="product_price">Rs.25000/-</string>
+</resources>
