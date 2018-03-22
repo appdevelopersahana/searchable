@@ -65,24 +65,20 @@ public class ApplianceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class SellerViewHolder extends RecyclerView.ViewHolder {
-
-
-        public TextView mApplianceNameTextView;
-
-        public TextView mSellerTextView;
-
-        public TextView mPriceTextView;
-
-        public ImageView mProductImageView;
+        @BindView(R.id.applianceNameTextView)
+        TextView mApplianceNameTextView;
+        @BindView(R.id.sellerTextView)
+        TextView mSellerTextView;
+        @BindView(R.id.priceTextView)
+        TextView mPriceTextView;
+        @BindView(R.id.productImageView)
+        ImageView mProductImageView;
         private View mLayout;
 
         public SellerViewHolder(View itemView) {
             super(itemView);
             mLayout = itemView;
-            mSellerTextView = itemView.findViewById(R.id.sellerTextView);
-            mApplianceNameTextView = itemView.findViewById(R.id.applianceNameTextView);
-            mProductImageView = itemView.findViewById(R.id.productImageView);
-            mPriceTextView = itemView.findViewById(R.id.priceTextView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void setData(Seller seller) {

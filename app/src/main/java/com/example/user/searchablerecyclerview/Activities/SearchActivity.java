@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.user.searchablerecyclerview.R;
 
@@ -31,10 +32,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        String searchInput=mSearchEditText.getText().toString();
-        Intent intent=new Intent(SearchActivity.this, ApplianceActivity.class);
-        intent.putExtra("search input",searchInput);
-        startActivity(intent);
+        String searchInput = mSearchEditText.getText().toString();
+        if (searchInput.isEmpty()) {
+            Toast.makeText(this, "You're searching without entering", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(SearchActivity.this, ApplianceActivity.class);
+            intent.putExtra("search input", searchInput);
+            startActivity(intent);
+        }
+
 
     }
 }
